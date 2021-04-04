@@ -53,19 +53,25 @@ Item {
         return hours+':'+minutes+':'+seconds;
     }
 
+
     QGCToolInsets {
         id:                     _totalToolInsets
         topEdgeCenterInset:     compassArrowIndicator.y + compassArrowIndicator.height
-        rightEdgeBottomInset:   parent.width - compassBackground.x
+        topEdgeRightInset:   parent.width - compassBackground.x
+
     }
+
+
 
     //-------------------------------------------------------------------------
     //-- Heading Indicator
+
     Rectangle {
         id:                         compassBar
         height:                     ScreenTools.defaultFontPixelHeight * 1.5
         width:                      ScreenTools.defaultFontPixelWidth  * 50
         color:                      "#DEDEDE"
+        opacity:                    1
         radius:                     2
         clip:                       true
         anchors.top:                headingIndicator.bottom
@@ -107,6 +113,7 @@ Item {
         height:                     ScreenTools.defaultFontPixelHeight
         width:                      ScreenTools.defaultFontPixelWidth * 4
         color:                      qgcPal.windowShadeDark
+        opacity:                   1
         anchors.top:                parent.top
         anchors.topMargin:          _toolsMargin
         anchors.horizontalCenter:   parent.horizontalCenter
@@ -138,6 +145,9 @@ Item {
         height:                 attitudeIndicator.height * 0.75
         radius:                 2
         color:                  qgcPal.window
+        opacity:                1
+        visible:                false
+
 
         Rectangle {
             id:                     compassBezel
@@ -196,6 +206,7 @@ Item {
             height:                     headingLabel.contentHeight * 1.5
             radius:                     ScreenTools.defaultFontPixelWidth  * 0.25
             color:                      qgcPal.windowShade
+            opacity: 1
 
             QGCLabel {
                 id:                 headingLabel
@@ -209,14 +220,16 @@ Item {
 
     Rectangle {
         id:                     attitudeIndicator
-        anchors.bottomMargin:   _toolsMargin
+        anchors.topMargin:      _toolsMargin
         anchors.rightMargin:    _toolsMargin
-        anchors.bottom:         parent.bottom
+        anchors.top:            parent.top
         anchors.right:          parent.right
         height:                 ScreenTools.defaultFontPixelHeight * 6
         width:                  height
         radius:                 height * 0.5
         color:                  qgcPal.windowShade
+        opacity:                1
+        visible:                true
 
         CustomAttitudeWidget {
             size:               parent.height * 0.95
@@ -226,3 +239,4 @@ Item {
         }
     }
 }
+

@@ -26,7 +26,7 @@ ApplicationWindow {
     id:             mainWindow
     minimumWidth:   ScreenTools.isMobile ? Screen.width  : Math.min(ScreenTools.defaultFontPixelWidth * 100, Screen.width)
     minimumHeight:  ScreenTools.isMobile ? Screen.height : Math.min(ScreenTools.defaultFontPixelWidth * 50, Screen.height)
-    visible:        true
+    visible:        false
 
     Component.onCompleted: {
         //-- Full screen on mobile or tiny screens

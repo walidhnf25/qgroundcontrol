@@ -36,6 +36,7 @@ ColumnLayout {
         radius:             _outerRadius
         color:              qgcPal.window
 
+
         DeadMouseArea { anchors.fill: parent }
 
         QGCAttitudeWidget {

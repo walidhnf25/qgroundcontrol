@@ -42,6 +42,8 @@ T.HorizontalFactValueGrid {
     ColumnLayout {
         id:         topLayout
         spacing:    0
+        opacity:    1
+
 
         RowLayout {
 
@@ -51,6 +53,7 @@ T.HorizontalFactValueGrid {
                 Layout.preferredWidth:  ScreenTools.minTouchPixels
                 visible:                settingsUnlocked
                 enabled:                settingsUnlocked
+                 opacity:    1
 
                 QGCColoredImage {
                     anchors.centerIn:   parent
@@ -72,6 +75,7 @@ T.HorizontalFactValueGrid {
             RowLayout {
                 id:         labelValueColumnLayout
                 spacing:    ScreenTools.defaultFontPixelWidth * 1.25
+                opacity:    1
 
                 Repeater {
                     model: _root.columns

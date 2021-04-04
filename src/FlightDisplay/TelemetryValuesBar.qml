@@ -21,6 +21,7 @@ Rectangle {
     height:             telemetryLayout.height + (_toolsMargin * 2)
     width:              telemetryLayout.width + (_toolsMargin * 2)
     color:              qgcPal.window
+    //color: "transparent"
     radius:             ScreenTools.defaultFontPixelWidth / 2
 
     DeadMouseArea { anchors.fill: parent }
@@ -30,11 +31,14 @@ Rectangle {
         anchors.margins:    _toolsMargin
         anchors.top:        parent.top
         anchors.left:       parent.left
+        opacity:  1
+
 
         HorizontalFactValueGrid {
             id:                     valueArea
             userSettingsGroup:      telemetryBarUserSettingsGroup
             defaultSettingsGroup:   telemetryBarDefaultSettingsGroup
+
 
             QGCMouseArea {
                 anchors.fill:   parent
