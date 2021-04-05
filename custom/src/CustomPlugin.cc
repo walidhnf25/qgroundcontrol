@@ -75,7 +75,7 @@ CustomPlugin::CustomPlugin(QGCApplication *app, QGCToolbox* toolbox)
     : QGCCorePlugin(app, toolbox)
 {
     _options = new CustomOptions(this, this);
-    _showAdvancedUI = false;
+    _showAdvancedUI = true;
 }
 
 CustomPlugin::~CustomPlugin()

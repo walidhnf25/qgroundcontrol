@@ -93,6 +93,10 @@ private slots:
     void _checkForBadCubeBlack(void);
 #endif
 
+private slots:
+    void         _advancedChanged        (bool advanced);
+
+
 private:
     QVariantList                _components;
 };

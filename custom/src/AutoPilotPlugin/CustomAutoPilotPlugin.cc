@@ -145,6 +145,16 @@ CustomAutoPilotPlugin::CustomAutoPilotPlugin(Vehicle* vehicle, QObject* parent)
 #if !defined(NO_SERIAL_LINK) && !defined(__android__)
     connect(vehicle->parameterManager(), &ParameterManager::parametersReadyChanged, this, &CustomAutoPilotPlugin::_checkForBadCubeBlack);
 #endif
+
+    connect(qgcApp()->toolbox()->corePlugin(), &QGCCorePlugin::showAdvancedUIChanged, this, &CustomAutoPilotPlugin::_advancedChanged);
+
+}
+
+// This signals that when Advanced Mode changes the list of Vehicle Settings page also changed
+void CustomAutoPilotPlugin::_advancedChanged(bool)
+{
+    _components.clear();
+    emit vehicleComponentsChanged();
 }
 
 CustomAutoPilotPlugin::~CustomAutoPilotPlugin()
