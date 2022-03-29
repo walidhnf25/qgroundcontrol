@@ -21,7 +21,7 @@ import QGroundControl.Palette               1.0
 //-------------------------------------------------------------------------
 //-- Message Indicator
 Item {
-    width:          height
+    width:          message.height
     anchors.top:    parent.top
     anchors.bottom: parent.bottom
 
@@ -47,24 +47,63 @@ Item {
         return qgcPal.colorGrey
     }
 
-    Image {
-        id:                 criticalMessageIcon
-        anchors.fill:       parent
-        source:             "/qmlimages/Yield.svg"
-        sourceSize.height:  height
-        fillMode:           Image.PreserveAspectFit
-        cache:              false
-        visible:            activeVehicle && activeVehicle.messageCount > 0 && _isMessageImportant
-    }
+    Row {
+        id:             message
+        anchors.top:    parent.top
+        anchors.bottom: parent.bottom
+        anchors.left:     parent.left
+        spacing:        ScreenTools.defaultFontPixelWidth * 0.25
 
-    QGCColoredImage {
-        anchors.fill:       parent
-        source:             "/qmlimages/Megaphone.svg"
-        sourceSize.height:  height
-        fillMode:           Image.PreserveAspectFit
-        color:              getMessageColor()
-        visible:            !criticalMessageIcon.visible
-    }
+            Image {
+                id:                 criticalMessageIcon
+                //anchors.fill:       parent
+                source:             "/qmlimages/Yield.svg"
+                width:              height*0.7
+                anchors.top:        parent.top
+                anchors.bottom:     parent.bottom
+                sourceSize.height:  height*0.7
+
+                fillMode:           Image.PreserveAspectFit
+                cache:              false
+                visible:            activeVehicle && activeVehicle.messageCount > 0 && _isMessageImportant
+            }
+
+            QGCColoredImage {
+                //anchors.fill:       parent
+                source:             "/qmlimages/Megaphone.svg"
+                width:              height*0.5
+                anchors.top:        parent.top
+                anchors.bottom:     parent.bottom
+                sourceSize.height:  height*0.5
+
+                fillMode:           Image.PreserveAspectFit
+                color:              getMessageColor()
+                visible:            !criticalMessageIcon.visible
+            }
+
+
+        }
+
+//    Image {
+//        id:                 criticalMessageIcon
+//        anchors.fill:       parent
+//        source:             "/qmlimages/Yield.svg"
+//        width:              height*0.5
+//        sourceSize.height:  height*0.5
+//        fillMode:           Image.PreserveAspectFit
+//        cache:              false
+//        visible:            activeVehicle && activeVehicle.messageCount > 0 && _isMessageImportant
+//    }
+
+//    QGCColoredImage {
+//        anchors.fill:       parent
+//        source:             "/qmlimages/Megaphone.svg"
+//        sourceSize.height:  height*0.5
+//        width:              height*0.5
+//        fillMode:           Image.PreserveAspectFit
+//        color:              getMessageColor()
+//        visible:            !criticalMessageIcon.visible
+//    }
 
     MouseArea {
         anchors.fill:   parent

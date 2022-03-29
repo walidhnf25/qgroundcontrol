@@ -320,6 +320,8 @@ Item {
                     PropertyChanges {
                         target:             _flightMapContainer
                         anchors.margins:    ScreenTools.defaultFontPixelHeight
+                        //anchors.leftMargin:ScreenTools.defaultFontPixelHeight *5
+
                     }
                 },
                 State {
@@ -375,6 +377,7 @@ Item {
                     PropertyChanges {
                         target:             _flightVideo
                         anchors.margins:    ScreenTools.defaultFontPixelHeight
+                        //anchors.leftMargin:ScreenTools.defaultFontPixelHeight *5
                     }
                     PropertyChanges {
                         target:             _flightVideoPipControl
@@ -566,7 +569,7 @@ Item {
             anchors.left:       isInstrumentRight() ? _mapAndVideo.left : undefined
             anchors.rightMargin:isInstrumentRight() ? undefined : ScreenTools.defaultFontPixelWidth
             anchors.right:      isInstrumentRight() ? undefined : _mapAndVideo.right
-            anchors.topMargin:  (parent.height/2)- (toolStrip.height/2)  //_toolsMargin + mainWindow.height / 2 -ToolStrip.height
+            anchors.topMargin:  (parent.height/2.5)- (toolStrip.height/2)  //parent.height/2
             anchors.top:        parent.top
 
             z:                  _mapAndVideo.z + 6

@@ -77,8 +77,8 @@ Item {
         id:                 telemIcon
         anchors.top:        parent.top
         anchors.bottom:     parent.bottom
-        width:              height
-        sourceSize.height:  height
+        width:              height*0.5
+        sourceSize.height:  height*0.5
         source:             "/qmlimages/TelemRSSI.svg"
         fillMode:           Image.PreserveAspectFit
         color:              qgcPal.buttonText

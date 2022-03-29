@@ -75,10 +75,10 @@ Item {
         spacing:        ScreenTools.defaultFontPixelWidth
 
         QGCColoredImage {
-            width:              height
+            width:              height*0.5
+            sourceSize.height:  height*0.5
             anchors.top:        parent.top
             anchors.bottom:     parent.bottom
-            sourceSize.height:  height
             source:             "/qmlimages/RC.svg"
             fillMode:           Image.PreserveAspectFit
             opacity:            _rcRSSIAvailable ? 1 : 0.5
