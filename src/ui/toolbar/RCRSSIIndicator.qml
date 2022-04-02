@@ -75,8 +75,8 @@ Item {
         spacing:        ScreenTools.defaultFontPixelWidth
 
         QGCColoredImage {
-            width:              height*0.5
-            sourceSize.height:  height*0.5
+            width:              height*ScreenTools.iconPointRatio
+            sourceSize.height:  height*ScreenTools.iconPointRatio
             anchors.top:        parent.top
             anchors.bottom:     parent.bottom
             source:             "/qmlimages/RC.svg"

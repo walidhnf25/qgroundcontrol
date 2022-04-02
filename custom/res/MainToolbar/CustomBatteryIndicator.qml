@@ -210,7 +210,7 @@ Item {
                 QGCLabel {
                     id:             battLabel
                     text:           qsTr("Battery Status")
-                    font.family:    ScreenTools.demiboldFontFamily
+                    font.family:    ScreenTools.normalFontFamily//demiboldFontFamily
                     anchors.horizontalCenter: parent.horizontalCenter
 
                 }
@@ -348,8 +348,8 @@ Item {
             id:                 imagePercent
             anchors.top:        parent.top
             anchors.bottom:     parent.bottom
-            width:              height*0.5
-            sourceSize.width:   width *0.5
+            width:              height*ScreenTools.iconPointRatio
+            sourceSize.width:   width *ScreenTools.iconPointRatio
             source:             "/qmlimages/Battery.svg"
             color:              CustomBattery.showFeatures? getAdvBatteryColor(): getBatteryColor(activeVehicle ? activeVehicle.battery : null)//qgcPal.text
             fillMode:           Image.PreserveAspectFit

@@ -119,12 +119,13 @@ Item {
             columns:                8
             rowSpacing:             _rowSpacing
             columnSpacing:          _labelToValueSpacing
-            Layout.alignment:       Qt.AlignVCenter | Qt.AlignHCenter
+            //Layout.alignment:       Qt.AlignVCenter | Qt.AlignHCenter
+             anchors.left:           parent.left
 
             QGCLabel {
                 text:               qsTr("Selected Waypoint")
-                Layout.columnSpan:  8
-                font.pointSize:     ScreenTools.smallFontPointSize
+                Layout.columnSpan:  1
+                font.pointSize:     ScreenTools.mediumFontPointSize
             }
 
             QGCLabel { text: qsTr("Alt diff:"); font.pointSize: _dataFontSize; }
@@ -173,12 +174,12 @@ Item {
             columns:                5
             rowSpacing:             _rowSpacing
             columnSpacing:          _labelToValueSpacing
-            Layout.alignment:       Qt.AlignVCenter | Qt.AlignHCenter
+            //Layout.alignment:       Qt.AlignVCenter | Qt.AlignHCenter
 
             QGCLabel {
                 text:               qsTr("Total Mission")
-                Layout.columnSpan:  5
-                font.pointSize:     ScreenTools.smallFontPointSize
+                Layout.columnSpan:  1
+                font.pointSize:     ScreenTools.mediumFontPointSize
             }
 
             QGCLabel { text: qsTr("Distance:"); font.pointSize: _dataFontSize; }
@@ -190,7 +191,7 @@ Item {
 
             Item { width: 1; height: 1 }
 
-            QGCLabel { text: qsTr("Max telem dist:"); font.pointSize: _dataFontSize; }
+            QGCLabel { text: qsTr("Max TMD:"); font.pointSize: _dataFontSize; }
             QGCLabel {
                 text:                   _missionMaxTelemetryText
                 font.pointSize:         _dataFontSize

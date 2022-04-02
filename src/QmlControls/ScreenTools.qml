@@ -52,6 +52,8 @@ Item {
     readonly property real smallFontPointRatio:      0.75
     readonly property real mediumFontPointRatio:     1.25
     readonly property real largeFontPointRatio:      1.5
+    readonly property real iconPointRatio:           0.6
+
 
     property real realPixelDensity: {
         //-- If a plugin defines it, just use what it tells us

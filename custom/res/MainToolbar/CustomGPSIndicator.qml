@@ -115,10 +115,10 @@ Item {
         anchors.left:     parent.left
         spacing:        ScreenTools.defaultFontPixelWidth * 0.25
         QGCColoredImage {
-            width:              height*0.5
+            width:              height*ScreenTools.iconPointRatio
             anchors.top:        parent.top
             anchors.bottom:     parent.bottom
-            sourceSize.height:  height*0.5
+            sourceSize.height:  height*ScreenTools.iconPointRatio
             source:             "/qmlimages/Gps.svg"
             color:              getGPSLock() ? qgcPal.colorGreen:qgcPal.warningText
             fillMode:           Image.PreserveAspectFit

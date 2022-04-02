@@ -58,10 +58,10 @@ Item {
                 id:                 criticalMessageIcon
                 //anchors.fill:       parent
                 source:             "/qmlimages/Yield.svg"
-                width:              height*0.7
+                width:              height*ScreenTools.iconPointRatio
                 anchors.top:        parent.top
                 anchors.bottom:     parent.bottom
-                sourceSize.height:  height*0.7
+                sourceSize.height:  height*ScreenTools.iconPointRatio
 
                 fillMode:           Image.PreserveAspectFit
                 cache:              false
@@ -71,10 +71,10 @@ Item {
             QGCColoredImage {
                 //anchors.fill:       parent
                 source:             "/qmlimages/Megaphone.svg"
-                width:              height*0.5
+                width:              height* ScreenTools.iconPointRatio
                 anchors.top:        parent.top
                 anchors.bottom:     parent.bottom
-                sourceSize.height:  height*0.5
+                sourceSize.height:  height*ScreenTools.iconPointRatio
 
                 fillMode:           Image.PreserveAspectFit
                 color:              getMessageColor()
